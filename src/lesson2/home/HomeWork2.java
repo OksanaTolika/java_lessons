@@ -19,11 +19,7 @@ public class HomeWork2 {
 
     public static boolean boolSumOfTwoNumber(int a, int b) {
         int sum = a + b;
-        if (sum >= 10 && sum <= 20) {   //понимаю фразу "10 до 20 (включительно)" так, что включительно относится и к 10
-            return true;
-        } else {
-            return false;
-        }
+        return sum > 10 && sum <= 20;
     }
 
     public static void positiveOrNegativeNumber(int a) {
@@ -35,11 +31,7 @@ public class HomeWork2 {
     }
 
     public static boolean isNegativeNumber(int a) {
-        if (a < 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return a < 0;
     }
 
     public static void printWord(int a, String s) {
@@ -49,17 +41,7 @@ public class HomeWork2 {
     }
 
     public static boolean leapYear(int year) {
-        boolean boolYear;
-
-        if (year % 4 == 0) {
-            if ((year % 100 == 0) && (year % 400 != 0)) {
-                boolYear = false;
-            } else {
-                boolYear = true;
-            }
-        } else {
-            boolYear = false;
-        }
-        return boolYear;
+        return (year % 4 == 0) && !((year % 100 == 0) && (year % 400 != 0));
     }
+
 }

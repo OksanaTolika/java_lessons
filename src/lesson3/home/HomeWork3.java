@@ -48,11 +48,11 @@ public class HomeWork3 {
         System.out.println();
 
         System.out.println("<--Seventh exercise-->");
-        int[] array7 = {4,5,3,1,1,2,2};
+        int[] array7 = {4, 5, 3, 1, 1, 2, 2};
         printOneArrayInLine(array7);
         System.out.println(checkBalance(array7));
         System.out.println();
-        int[] array8 = {2,3,1,3,2,3};
+        int[] array8 = {2, 3, 1, 3, 2, 3};
         printOneArrayInLine(array8);
         System.out.println(checkBalance(array8));
         System.out.println();
@@ -167,10 +167,11 @@ public class HomeWork3 {
         } else {
             for (int i = 0; i < array.length; i++) {
                 sumFringe += array[i];
-                if (sumFringe == sum/2) {
+                if (sumFringe == sum / 2) {
                     return true;
                 }
-            }return false;
+            }
+            return false;
         }
     }
 }

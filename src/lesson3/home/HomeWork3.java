@@ -8,63 +8,66 @@ public class HomeWork3 {
 
         System.out.println("<--First exercise-->");
         int[] array1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        System.out.println("Array before reverse");
-        printArrayInLine(array1);
-        System.out.println("Array after reverse");
+        printArrayInLineWithTitle("Array before reverse", array1, false);
         reverseArray(array1);
-        printArrayInLine(array1);
+        printArrayInLineWithTitle("Array after reverse", array1, true);
 
         System.out.println("<--Second exercise-->");
         int[] array2 = new int[100];
         fillArray(array2);
-        printArrayInLine(array2);
+        printArrayInLineWithTitle("Array with integer from 1 to 100", array2, true);
 
         System.out.println("<--Third exercise-->");
         int[] array3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        System.out.println("Array before change");
-        printArrayInLine(array3);
+        printArrayInLineWithTitle("Array before change", array3, false);
         changeArray(array3);
-        System.out.println("Array after change");
-        printArrayInLine(array3);
+        printArrayInLineWithTitle("Array after change", array3, true);
 
         System.out.println("<--Forth exercise-->");
         int[][] array4 = new int[5][5];
         setArray(array4);
-        printArray(array4);
+        printArrayWithTitle("Matrix with diagonals equals 1", array4, true);
 
         System.out.println("<--Fifth exercise-->");
-        printArrayInLine(setArrayInitialValue(8, 6));
+        printArrayInLineWithTitle("Array:", setArrayInitialValue(8, 6), true);
 
         System.out.println("<--Sixth exercise-->");
         int[] array6 = new int[10];
         setArrayRandomInteger(array6, -20, 20);
-        printArrayInLine(array6);
+        printArrayInLineWithTitle("Array:", array6, false);
         int[] minMaxArray6 = getMinMaxElements(array6);
         System.out.println("Minimum = " + minMaxArray6[0]);
-        System.out.println("Maximum = " + minMaxArray6[1]);
+        System.out.println("Maximum = " + minMaxArray6[1] + "\n");
 
         System.out.println("<--Seventh exercise-->");
         int[] array7 = {4, 5, 3, 1, 1, 2, 2};
-        printArrayInLine(array7);
-        System.out.println(checkBalance(array7));
-        System.out.println();
+        printArrayInLineWithTitle("Array:", array7, false);
+        System.out.println("CheckBalance: " + checkBalance(array7));
         int[] array8 = {2, 3, 1, 3, 2, 3};
-        printArrayInLine(array8);
-        System.out.println(checkBalance(array8));
+        printArrayInLineWithTitle("Array:", array8, false);
+        System.out.println("CheckBalance: " + checkBalance(array8));
     }
 
-    public static void printArrayInLine(int[] input) {
-        for (int i = 0; i < input.length; i++) {
-            System.out.print(input[i] + "\t");
-        }
-        System.out.println();
-    }
-
-    public static void printArray(int[][] input) {
+    public static void printArrayWithTitle(String title, int[][] input, boolean needNewEmptyLine) {
+        System.out.println(title);
         for (int i = 0; i < input.length; i++) {
             for (int j = 0; j < input[i].length; j++) {
                 System.out.print(input[i][j] + "\t");
             }
+            System.out.println();
+        }
+        if (needNewEmptyLine) {
+            System.out.println();
+        }
+    }
+
+    public static void printArrayInLineWithTitle(String title, int[] input, boolean needNewEmptyLine) {
+        System.out.println(title);
+        for (int i = 0; i < input.length; i++) {
+            System.out.print(input[i] + "\t");
+        }
+        System.out.println();
+        if (needNewEmptyLine) {
             System.out.println();
         }
     }

@@ -8,43 +8,43 @@ public class HomeWork3 {
 
         System.out.println("<--First exercise-->");
         int[] array1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
-        printArrayInLineWithTitle("Array before reverse", array1, false);
+        printArrayWithTitle("Array before reverse", array1, false);
         reverseArray(array1);
-        printArrayInLineWithTitle("Array after reverse", array1, true);
+        printArrayWithTitle("Array after reverse", array1, true);
 
         System.out.println("<--Second exercise-->");
         int[] array2 = new int[100];
         fillArray(array2);
-        printArrayInLineWithTitle("Array with integer from 1 to 100", array2, true);
+        printArrayWithTitle("Array with integer from 1 to 100", array2, true);
 
         System.out.println("<--Third exercise-->");
         int[] array3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-        printArrayInLineWithTitle("Array before change", array3, false);
+        printArrayWithTitle("Array before change", array3, false);
         changeArray(array3);
-        printArrayInLineWithTitle("Array after change", array3, true);
+        printArrayWithTitle("Array after change", array3, true);
 
         System.out.println("<--Forth exercise-->");
         int[][] array4 = new int[5][5];
-        setArray(array4);
+        fillDiagonals(array4);
         printArrayWithTitle("Matrix with diagonals equals 1", array4, true);
 
         System.out.println("<--Fifth exercise-->");
-        printArrayInLineWithTitle("Array:", setArrayInitialValue(8, 6), true);
+        printArrayWithTitle("Array:", setArrayInitialValue(8, 6), true);
 
         System.out.println("<--Sixth exercise-->");
         int[] array6 = new int[10];
         setArrayRandomInteger(array6, -20, 20);
-        printArrayInLineWithTitle("Array:", array6, false);
+        printArrayWithTitle("Array:", array6, false);
         int[] minMaxArray6 = getMinMaxElements(array6);
         System.out.println("Minimum = " + minMaxArray6[0]);
         System.out.println("Maximum = " + minMaxArray6[1] + "\n");
 
         System.out.println("<--Seventh exercise-->");
         int[] array7 = {4, 5, 3, 1, 1, 2, 2};
-        printArrayInLineWithTitle("Array:", array7, false);
+        printArrayWithTitle("Array:", array7, false);
         System.out.println("CheckBalance: " + checkBalance(array7));
         int[] array8 = {2, 3, 1, 3, 2, 3};
-        printArrayInLineWithTitle("Array:", array8, false);
+        printArrayWithTitle("Array:", array8, false);
         System.out.println("CheckBalance: " + checkBalance(array8));
     }
 
@@ -61,7 +61,7 @@ public class HomeWork3 {
         }
     }
 
-    public static void printArrayInLineWithTitle(String title, int[] input, boolean needNewEmptyLine) {
+    public static void printArrayWithTitle(String title, int[] input, boolean needNewEmptyLine) {
         System.out.println(title);
         for (int i = 0; i < input.length; i++) {
             System.out.print(input[i] + "\t");
@@ -96,7 +96,7 @@ public class HomeWork3 {
         }
     }
 
-    public static void setArray(int[][] array) {
+    public static void fillDiagonals(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             array[i][i] = 1;
             array[i][array.length - 1 - i] = 1;

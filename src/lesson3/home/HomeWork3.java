@@ -35,9 +35,8 @@ public class HomeWork3 {
         int[] array6 = new int[10];
         setArrayRandomInteger(array6, -20, 20);
         printArrayWithTitle("Array:", array6, false);
-        int[] minMaxArray6 = getMinMaxElements(array6);
-        System.out.println("Minimum = " + minMaxArray6[0]);
-        System.out.println("Maximum = " + minMaxArray6[1] + "\n");
+        System.out.println("Minimum = " + getMinElement(array6));
+        System.out.println("Maximum = " + getMaxElement(array6) + "\n");
 
         System.out.println("<--Seventh exercise-->");
         int[] array7 = {4, 5, 3, 1, 1, 2, 2};
@@ -121,19 +120,24 @@ public class HomeWork3 {
         }
     }
 
-    public static int[] getMinMaxElements(int[] array) {
-        int[] minMaxElements = new int[2];
-        minMaxElements[0] = array[0];
-        minMaxElements[1] = array[0];
+    public static int getMinElement(int[] array) {
+        int minElement = array[0];
         for (int i = 1; i < array.length; i++) {
-            if (array[i] > minMaxElements[1]) {
-                minMaxElements[1] = array[i];
-            }
-            if (array[i] < minMaxElements[0]) {
-                minMaxElements[0] = array[i];
+            if (array[i] < minElement) {
+                minElement = array[i];
             }
         }
-        return minMaxElements;
+        return minElement;
+    }
+
+    public static int getMaxElement(int[] array) {
+        int maxElement = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > maxElement) {
+                maxElement = array[i];
+            }
+        }
+        return maxElement;
     }
 
     public static boolean checkBalance(int[] array) {

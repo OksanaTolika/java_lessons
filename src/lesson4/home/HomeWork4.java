@@ -43,11 +43,11 @@ public class HomeWork4 {
         createHealthPack();
         createEnemies();
         createExit();
-        printMap(getSeenMap());
+        printMap();
 
         while (true) {
             directionPlayer();
-            printMap(getSeenMap());
+            printMap();
 
             if (playerHealth <= 0) {
                 System.out.println("Player Loss!");
@@ -199,25 +199,15 @@ public class HomeWork4 {
         return map[y][x] == emptyCell;
     }
 
-    public static char[][] getSeenMap() {
-        char[][] seenMap = new char[mapHeight][mapWidth];
-        for (int i = 0; i < mapHeight; i++) {
-            for (int j = 0; j < mapWidth; j++) {
-                if (map[i][j] == player) {
-                    seenMap[i][j] = player;
-                } else {
-                    seenMap[i][j] = emptyCell;
-                }
-            }
-        }
-        return seenMap;
-    }
-
-    public static void printMap(char[][] seenMap) {
+    public static void printMap() {
         System.out.println("========== MAP ==========");
         for (int i = 0; i < mapHeight; i++) {
             for (int j = 0; j < mapWidth; j++) {
-                System.out.print(seenMap[i][j] + "|");
+                if (i == playerY && j == playerX) {
+                    System.out.print(player + "|");
+                } else {
+                    System.out.print(emptyCell + "|");
+                }
             }
             System.out.println();
         }

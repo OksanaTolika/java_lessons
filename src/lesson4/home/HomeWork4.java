@@ -43,11 +43,11 @@ public class HomeWork4 {
         createHealthPack();
         createEnemies();
         createExit();
-        printMap();
+        printMap(getSeenMap());
 
         while (true) {
             directionPlayer();
-            printMap();
+            printMap(getSeenMap());
 
             if (playerHealth <= 0) {
                 System.out.println("Player Loss!");
@@ -113,10 +113,8 @@ public class HomeWork4 {
             isFoundExit = true;
             System.out.println("Player found exit!");
         }
-        if (playerY != currentY || playerX != currentX) {
-            map[playerY][playerX] = player;
-            map[currentY][currentX] = emptyCell;
-        }
+        map[currentY][currentX] = emptyCell;
+        map[playerY][playerX] = player;
     }
 
     public static boolean isValidMove(int currentX, int currentY, int nextX, int nextY) {
@@ -201,16 +199,25 @@ public class HomeWork4 {
         return map[y][x] == emptyCell;
     }
 
-    public static void printMap() {
+    public static char[][] getSeenMap() {
+        char[][] seenMap = new char[mapHeight][mapWidth];
+        for (int i = 0; i < mapHeight; i++) {
+            for (int j = 0; j < mapWidth; j++) {
+                if (map[i][j] == player) {
+                    seenMap[i][j] = player;
+                } else {
+                    seenMap[i][j] = emptyCell;
+                }
+            }
+        }
+        return seenMap;
+    }
+
+    public static void printMap(char[][] seenMap) {
         System.out.println("========== MAP ==========");
         for (int i = 0; i < mapHeight; i++) {
             for (int j = 0; j < mapWidth; j++) {
-
-                if (map[i][j] == player) {
-                    System.out.print(map[i][j] + "|");
-                } else {
-                    System.out.print(emptyCell + "|");
-                }
+                System.out.print(seenMap[i][j] + "|");
             }
             System.out.println();
         }

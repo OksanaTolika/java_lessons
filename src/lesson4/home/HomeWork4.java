@@ -115,9 +115,6 @@ public class HomeWork4 {
             isFoundExit = true;
             System.out.println("Player found exit!");
         }
-        map[currentY][currentX] = emptyCell;
-        map[playerY][playerX] = player;
-
         isSeenMap[currentY][currentX] = emptyCell;
         isSeenMap[playerY][playerX] = player;
     }

@@ -21,6 +21,8 @@ public class HomeWork4 {
     public static char exitCell = '0';
     public static boolean isFoundExit = false;
 
+    public static char[][] isSeenMap;
+
     public static char player = '@';
     public static int playerPower = 10;
     public static int playerHealth = 100;
@@ -115,6 +117,9 @@ public class HomeWork4 {
         }
         map[currentY][currentX] = emptyCell;
         map[playerY][playerX] = player;
+
+        isSeenMap[currentY][currentX] = emptyCell;
+        isSeenMap[playerY][playerX] = player;
     }
 
     public static boolean isValidMove(int currentX, int currentY, int nextX, int nextY) {
@@ -137,8 +142,14 @@ public class HomeWork4 {
                 map[i][j] = emptyCell;
             }
         }
-//        System.out.println("Map created. Size " + mapHeight + "x" + mapWidth);
         System.out.printf("Map created. Size %sx%s\n", mapHeight, mapWidth);
+
+        isSeenMap = new char[mapHeight][mapWidth];
+        for (int i = 0; i < mapHeight; i++) {
+            for (int j = 0; j < mapWidth; j++) {
+                isSeenMap[i][j] = emptyCell;
+            }
+        }
     }
 
     public static void createPlayer() {
@@ -146,6 +157,7 @@ public class HomeWork4 {
         playerY = getRandomValue(0, mapHeight - 1);
         map[playerY][playerX] = player;
         System.out.printf("Player spawn in [%s;%s]\n", playerY, playerX);
+        isSeenMap[playerY][playerX] = player;
     }
 
     public static void createHealthPack() {
@@ -203,11 +215,7 @@ public class HomeWork4 {
         System.out.println("========== MAP ==========");
         for (int i = 0; i < mapHeight; i++) {
             for (int j = 0; j < mapWidth; j++) {
-                if (i == playerY && j == playerX) {
-                    System.out.print(player + "|");
-                } else {
-                    System.out.print(emptyCell + "|");
-                }
+                System.out.print(isSeenMap[i][j] + "|");
             }
             System.out.println();
         }

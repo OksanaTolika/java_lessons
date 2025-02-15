@@ -37,10 +37,10 @@ public class HomeWork5 {
                 140600.00,
                 38);
 
-        for (Employee empl : employees) {
-            if (empl.getAge() > 40) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getAge() > 40) {
                 System.out.println("<---Print employee--->");
-                System.out.println(empl.getInfo());
+                System.out.println(employees[i].getInfo());
                 System.out.println("<-------------------->\n");
             }
         }

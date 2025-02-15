@@ -15,16 +15,8 @@ public class Employee {
         this.age = age;
     }
 
-    public String[] getInfo() {
-        String[] info = {
-                "Fio: " + fio,
-                "Position: " + position,
-                "Email: " + email,
-                "Phone: " + phone,
-                "Salary: " + salary,
-                "Age: " + age
-        };
-        return info;
+    public String getInfo() {
+        return "Fio: " + fio + "\nPosition: " + position + "\nEmail: " + email + "\nPhone: " + phone + "\nSalary: " + salary + "\nAge: " + age;
     }
 
     public int getAge() {

@@ -40,10 +40,7 @@ public class HomeWork5 {
         for (Employee empl : employees) {
             if (empl.getAge() > 40) {
                 System.out.println("<---Print employee--->");
-                String[] info = empl.getInfo();
-                for (String line : info) {
-                    System.out.println(line);
-                }
+                System.out.println(empl.getInfo());
                 System.out.println("<-------------------->\n");
             }
         }

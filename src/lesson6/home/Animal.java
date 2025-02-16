@@ -1,5 +1,6 @@
 public abstract class Animal {
-    private static int animalCount = 0;
+
+    public static int animalCount = 0;
 
     protected String name;
 
@@ -8,11 +9,7 @@ public abstract class Animal {
         animalCount++;
     }
 
-    public static int getAnimalCount() {
-        return animalCount;
-    }
+    public abstract String run(double distance);
 
-    public abstract void run(double distance);
-
-    public abstract void swim(double distance);
+    public abstract String swim(double distance);
 }

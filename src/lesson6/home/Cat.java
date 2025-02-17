@@ -1,5 +1,6 @@
 public class Cat extends Animal {
 
+    private static final double maxRunDistance = 200;
     public static int catCount = 0;
 
     public Cat(String name) {
@@ -9,10 +10,10 @@ public class Cat extends Animal {
 
     @Override
     public String run(double distance) {
-        if (distance <= 200) {
+        if (distance <= maxRunDistance) {
             return name + " пробежал " + distance + " метров.";
         } else {
-            return name + " пробежал 200 метров и устал.";
+            return name + " пробежал " + maxRunDistance + " метров и устал.";
         }
     }
 

@@ -8,15 +8,6 @@ public class Cat extends Animal {
     }
 
     @Override
-    public String run(int distance) {
-        if (distance <= maxRunDistance) {
-            return name + " пробежал " + distance + " метров.";
-        } else {
-            return name + " пробежал " + maxRunDistance + " метров и устал.";
-        }
-    }
-
-    @Override
     public String swim(int distance) {
         return name + " не умеет плавать.";
     }

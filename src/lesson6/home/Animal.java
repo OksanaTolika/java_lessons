@@ -1,4 +1,4 @@
-public abstract class Animal {
+public class Animal {
 
     public static int animalCount = 0;
 
@@ -13,7 +13,19 @@ public abstract class Animal {
         animalCount++;
     }
 
-    public abstract String run(int distance);
+    public String run(int distance) {
+        if (distance <= maxRunDistance) {
+            return name + " пробежал " + distance + " метров.";
+        } else {
+            return name + " пробежал " + maxRunDistance + " метров и устал.";
+        }
+    }
 
-    public abstract String swim(int distance);
+    public String swim(int distance) {
+        if (distance <= maxSwimDistance) {
+            return name + " проплыл " + distance + " метров.";
+        } else {
+            return name + " проплыл " + maxSwimDistance + " метров и устал.";
+        }
+    }
 }

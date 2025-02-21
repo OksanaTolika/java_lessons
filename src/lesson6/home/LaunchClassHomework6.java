@@ -1,9 +1,9 @@
 public class LaunchClassHomework6 {
     public static void main(String[] args) {
 
-        Dog bobik = new Dog("Бобик");
-        Cat barsik = new Cat("Барсик");
-        Dog volchok = new Dog("Волчок");
+        Dog bobik = new Dog("Бобик", 200, 10);
+        Cat barsik = new Cat("Барсик", 300);
+        Dog volchok = new Dog("Волчок", 500, 200);
 
         System.out.println(bobik.run(150));
         System.out.println(bobik.swim(201));

@@ -1,17 +1,14 @@
 public class Dog extends Animal {
 
-    private static final double maxRunDistance = 500;
-    private static final double maxSwimDistance = 10;
-
     public static int dogCount = 0;
 
-    public Dog(String name) {
-        super(name);
+    public Dog(String name, int maxRunDistance, int maxSwimDistance) {
+        super(name, maxRunDistance, maxSwimDistance);
         dogCount++;
     }
 
     @Override
-    public String run(double distance) {
+    public String run(int distance) {
         if (distance <= maxRunDistance) {
             return name + " пробежал " + distance + " метров.";
         } else {
@@ -20,7 +17,7 @@ public class Dog extends Animal {
     }
 
     @Override
-    public String swim(double distance) {
+    public String swim(int distance) {
         if (distance <= maxSwimDistance) {
             return name + " проплыл " + distance + " метров.";
         } else {

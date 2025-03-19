@@ -1,4 +1,4 @@
-package module3.lesson1.app;
+package module3.lesson1.work.app;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,10 +10,10 @@ import java.awt.*;
 
 public class Canvas extends JPanel {
 
-    private final Circles window;
+    private final CirclesApplication window;
     private long lastUpdateTime;
 
-    public Canvas(Circles window) {
+    public Canvas(CirclesApplication window) {
         this.window = window;
         this.lastUpdateTime = System.nanoTime();
     }

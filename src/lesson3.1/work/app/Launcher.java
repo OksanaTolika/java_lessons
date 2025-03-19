@@ -1,4 +1,4 @@
-package module3.lesson1.app;
+package module3.lesson1.work.app;
 
 /**
  * Created by Aleksandr Gladkov [Anticisco]
@@ -15,6 +15,6 @@ public class Launcher {
      */
 
     public static void main(String[] args) {
-        new Circles();
+        new CirclesApplication();
     }
 }

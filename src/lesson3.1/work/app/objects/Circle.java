@@ -1,7 +1,7 @@
-package module3.lesson1.app.objects;
+package module3.lesson1.work.app.objects;
 
-import module3.lesson1.app.Canvas;
-import module3.lesson1.app.models.Sprite;
+import module3.lesson1.work.app.Canvas;
+import module3.lesson1.work.app.models.Sprite;
 
 import java.awt.*;
 
@@ -23,6 +23,25 @@ public class Circle extends Sprite {
     public Circle() {
         halfWidth = 10 + (float)(Math.random() * 50f);
         halfHeight = halfWidth;
+    }
+
+    public Circle(int x, int y) {
+        this();
+        this.x = x;
+        this.y = y;
+    }
+
+    public float getVectorX() {
+        return vectorX;
+    }
+
+    public float getVectorY() {
+        return vectorY;
+    }
+
+    public void setVector(float vectorX, float vectorY) {
+        this.vectorX = vectorX;
+        this.vectorY = vectorY;
     }
 
     @Override

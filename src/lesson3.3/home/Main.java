@@ -21,10 +21,10 @@ public class Main {
         }
     }
 
-    public static String[][] createRandomMatrix(int N, int M) {
-        String[][] matrix = new String[N][M];
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
+    public static String[][] createRandomMatrix(int n, int m) {
+        String[][] matrix = new String[n][m];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
                 matrix[i][j] = String.valueOf((char) myRandomInteger(minBound, maxBound));
             }
         }
